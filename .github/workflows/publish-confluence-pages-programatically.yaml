@@ -1,0 +1,52 @@
+name: publish-confluence-pages-programatically
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'create or update or append or delete confluence page'
+        type: choice
+        options:
+          - create
+          - update
+          - append
+          - delete
+        required: true
+      confluence_space:
+        description: 'confluencce space'
+        default: 'devwithkrishna'
+        required: true
+        type: string
+      confluence_page_title:
+        description: 'heading of confluence page'
+        required: true
+        type: string
+      markdown_file_path:
+        description: 'markdown path and file name'
+        default: 'README.md'
+        type: string
+        required: true
+jobs:
+  publish-confluence-pages-programatically:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v4
+      - name: set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: poetry installation
+        run: |
+          pip install poetry 
+          poetry install --no-dev
+      - name: Execute python program
+        env:
+          CONFLUENCE_URL : ${{ secrets.CONFLUENCE_URL }}
+          CONFLUENCE_USERNAME: ${{ secrets.CONFLUENCE_USERNAME }}
+          CONFLUENCE_PASSWORD: ${{ secrets.CONFLUENCE_PASSWORD }}
+        run: |
+          poetry run python3 confluence.py --confluence_space devwithkrishna \
+          --confluence_page_title "This is test" \
+          --action update --markdown_file_path README.md
+      - name: program execution completed
+        run: echo "program execution completed"

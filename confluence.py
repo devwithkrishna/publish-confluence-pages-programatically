@@ -156,7 +156,7 @@ def main():
     """ To test the script"""
     parser = argparse.ArgumentParser(description='Process arguments for the program')
     parser.add_argument("--action", type=str, choices=['create','update','append','delete'], help='Possble actions', required=True)
-    parser.add_argument("--confluence_space", type=str, help='Confluencce space', required=True)
+    parser.add_argument("--confluence_space", type=str, help='Confluence space', required=True)
     parser.add_argument("--confluence_page_title", type=str, help='Confluence page title', required=True)
     parser.add_argument("--markdown_file_path", type=str, help='Markdown file path with file name', required=True)
 
