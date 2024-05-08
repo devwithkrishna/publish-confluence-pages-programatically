@@ -46,6 +46,6 @@ The program requires 4 Inputs
 
 
 >[!NOTE]
-> This Program uses username ad api key for authentication with atlassian confluence.
+> This Program uses username & api key for authentication with atlassian confluence.
 > On local testing python-dotenv with .env file is used
 > On GitHub Workflow, passed as aa environment variable in from GitHub Secrets.
