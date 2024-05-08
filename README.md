@@ -9,7 +9,7 @@ publish confluce pages programattically
 
 ## This is a test
 
-![Alt Adding Images in Markdown](C:\Users\Krishnadhas N K\Documents\GitHub\devwithkrishna\publish-confluence-pages-programatically\Screenshot.png)
+![Adding Images in Markdown](Screenshot.png)
 
 ### This is another teST
 
