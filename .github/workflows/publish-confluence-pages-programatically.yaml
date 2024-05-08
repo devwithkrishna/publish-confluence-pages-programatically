@@ -47,6 +47,6 @@ jobs:
         run: |
           poetry run python3 confluence.py --confluence_space ${{ inputs.confluence_space }} \
           --confluence_page_title ${{ inputs.confluence_page_title }} \
-          --action ${{ inputs.action }} --markdown_file_path ${{ inputs.markdown_file_path }
+          --action ${{ inputs.action }} --markdown_file_path ${{ inputs.markdown_file_path }}
       - name: program execution completed
         run: echo "program execution completed"
